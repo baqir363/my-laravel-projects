@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SomeAddController;
+use App\Http\Controllers\MyController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -35,3 +36,15 @@ route::get('/edit_some/{id}',[SomeAddController::class,'edit']);
 route::post('/update_some/{id}',[SomeAddController::class,'update']);
 
 route::get('/delete_some/{id}',[SomeAddController::class,'destroy']);
+
+route::get('/ajax', [MyController::class,'ajax']);
+
+route::post('/ajaxinsert',[MyController::class,'insert']);
+
+route::get('/upload', [MyController::class,'upload']);
+
+route::post('/ajaxupload',[MyController::class,'ajaxupload']);
+
+route::get('/delete', [MyController::class,'delete']);
+
+route::delete('/delete_post/{id}',[MyController::class,'delete_post']);

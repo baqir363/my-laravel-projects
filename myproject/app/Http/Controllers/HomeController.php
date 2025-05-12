@@ -14,6 +14,15 @@ class HomeController extends Controller
 
     public function add_post(Request $request)
     {
+        // $validated = $request->validate([
+        //     "title" => "required|max:40",
+        //     "description" => "required",
+        //     "image" => "required|image",
+        // ]);
+        // $validated['image'] = $request->file('image')->store('recipes','public');
+        // Post::create($validated);
+
+
         $data = new Post;
 
         $data->title = $request->title;
@@ -44,6 +53,19 @@ class HomeController extends Controller
 
     public function update_post(Request $request,$id)
     {
+        // $validated = $request->validate([
+        //     "title" => "required|max:40",
+        //     "description" => "required",
+        // ]);
+        // if($request->file('image')){
+        //     $request->validate([
+        //         "image" => "image",
+        //     ]);
+        //     $validated['image'] = $request->file('image')->store('recipes','public');
+        // }
+        // $recipe->update($validated);
+
+
         $post = Post::find($id);
 
         $post->title = $request->title;
